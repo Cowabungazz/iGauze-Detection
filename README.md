@@ -1,5 +1,6 @@
 # Gauze Detection System
 Uploaded weights and script are old version. Latests are not released
+<img width="1910" height="576" alt="image" src="https://github.com/user-attachments/assets/2fe99c18-6def-406a-b4e2-4703b24ff261" />
 
 # How to run?
 Create src\videos -> put Clean and Dirty video inside
