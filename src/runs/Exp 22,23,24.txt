@@ -1,0 +1,105 @@
+Exp 22,23,24:
+
+Reduce Initial Learning Rate: Lower the initial learning rate (e.g., lr0: 0.001) to see if it helps in achieving more stable and gradual convergence.
+Adjust Weight Decay:
+
+Increase Weight Decay: Try increasing the weight decay (e.g., weight_decay: 0.001) to see if it helps in reducing overfitting and improving generalization.
+Introduce Focal Loss:
+
+Focal Loss Gamma: Set fl_gamma to a non-zero value (e.g., fl_gamma: 1.5) to handle class imbalance better and focus more on hard-to-classify examples.
+
+Experiment 22: Lower Initial Learning Rate
+lr0: 0.001  # initial learning rate
+lrf: 0.1  # final OneCycleLR learning rate (lr0 * lrf)
+momentum: 0.937  # SGD momentum/Adam beta1
+weight_decay: 0.0005  # optimizer weight decay
+warmup_epochs: 3.0  # warmup epochs
+warmup_momentum: 0.8  # warmup initial momentum
+warmup_bias_lr: 0.1  # warmup initial bias lr
+box: 0.05  # box loss gain
+cls: 0.3  # cls loss gain
+cls_pw: 1.0  # cls BCELoss positive_weight
+obj: 0.7  # obj loss gain
+obj_pw: 1.0  # obj BCELoss positive_weight
+iou_t: 0.20  # IoU training threshold
+anchor_t: 4.0  # anchor-multiple threshold
+mosaic: 1.0  # mosaic augmentation probability
+fl_gamma: 0.0  # focal loss gamma
+hsv_h: 0.015  # image HSV-Hue augmentation
+hsv_s: 0.7  # image HSV-Saturation augmentation
+hsv_v: 0.4  # image HSV-Value augmentation
+degrees: 0.8  # image rotation
+translate: 0.1  # image translation
+scale: 0.9  # image scale (+/- gain)
+shear: 0.5  # image shear (+/- deg)
+perspective: 0.001  # image perspective (+/- fraction)
+flipud: 0.5  # image flip up-down (probability)
+fliplr: 0.5  # image flip left-right (probability)
+mixup: 0.0  # image mixup (probability)
+copy_paste: 0.0  # segment copy-paste (probability)
+
+
+
+Experiment 23: Increased Weight Decay
+lr0: 0.01  # initial learning rate
+lrf: 0.1  # final OneCycleLR learning rate (lr0 * lrf)
+momentum: 0.937  # SGD momentum/Adam beta1
+weight_decay: 0.001  # optimizer weight decay (increased from 0.0005)
+warmup_epochs: 3.0  # warmup epochs
+warmup_momentum: 0.8  # warmup initial momentum
+warmup_bias_lr: 0.1  # warmup initial bias lr
+box: 0.05  # box loss gain
+cls: 0.3  # cls loss gain
+cls_pw: 1.0  # cls BCELoss positive_weight
+obj: 0.7  # obj loss gain
+obj_pw: 1.0  # obj BCELoss positive_weight
+iou_t: 0.20  # IoU training threshold
+anchor_t: 4.0  # anchor-multiple threshold
+mosaic: 1.0  # mosaic augmentation probability
+fl_gamma: 0.0  # focal loss gamma
+hsv_h: 0.015  # image HSV-Hue augmentation
+hsv_s: 0.7  # image HSV-Saturation augmentation
+hsv_v: 0.4  # image HSV-Value augmentation
+degrees: 0.8  # image rotation
+translate: 0.1  # image translation
+scale: 0.9  # image scale (+/- gain)
+shear: 0.5  # image shear (+/- deg)
+perspective: 0.001  # image perspective (+/- fraction)
+flipud: 0.5  # image flip up-down (probability)
+fliplr: 0.5  # image flip left-right (probability)
+mixup: 0.0  # image mixup (probability)
+copy_paste: 0.0  # segment copy-paste (probability)
+
+
+Experiment 24: Add Focal Loss
+lr0: 0.01  # initial learning rate
+lrf: 0.1  # final OneCycleLR learning rate (lr0 * lrf)
+momentum: 0.937  # SGD momentum/Adam beta1
+weight_decay: 0.0005  # optimizer weight decay
+warmup_epochs: 3.0  # warmup epochs
+warmup_momentum: 0.8  # warmup initial momentum
+warmup_bias_lr: 0.1  # warmup initial bias lr
+box: 0.05  # box loss gain
+cls: 0.3  # cls loss gain
+cls_pw: 1.0  # cls BCELoss positive_weight
+obj: 0.7  # obj loss gain
+obj_pw: 1.0  # obj BCELoss positive_weight
+iou_t: 0.20  # IoU training threshold
+anchor_t: 4.0  # anchor-multiple threshold
+mosaic: 1.0  # mosaic augmentation probability
+fl_gamma: 1.5  # focal loss gamma (introduced focal loss)
+hsv_h: 0.015  # image HSV-Hue augmentation
+hsv_s: 0.7  # image HSV-Saturation augmentation
+hsv_v: 0.4  # image HSV-Value augmentation
+degrees: 0.8  # image rotation
+translate: 0.1  # image translation
+scale: 0.9  # image scale (+/- gain)
+shear: 0.5  # image shear (+/- deg)
+perspective: 0.001  # image perspective (+/- fraction)
+flipud: 0.5  # image flip up-down (probability)
+fliplr: 0.5  # image flip left-right (probability)
+mixup: 0.0  # image mixup (probability)
+copy_paste: 0.0  # segment copy-paste (probability)
+
+
+
